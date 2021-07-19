@@ -1,14 +1,14 @@
 import React, {useRef} from 'react';
 import '../../styles/transparentCardPanel.scss';
 import Card from './Card.js'
-import Background from '../../media/space.jpg';
+import background from '../../media/cam1.jpg'
 const CardPanel = (props) => {
     const CardPanelRef = useRef(null);
 
     if (props.images.length > 0) {
         return (
-            <div className='card-panel-cont'>
-                <div className='card-panel'>
+            <div className='card-panel-cont' >
+                <div className='card-panel' style={{background: `url(${props.backgroundImage})`}}>
                     {props.images.map((image, index) => (
                         <Card image={image} key={index} index={index} section={"CardPanel"} style={{zIndex:'2'}}/>
                     ))}
